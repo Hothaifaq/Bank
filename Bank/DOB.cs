@@ -9,11 +9,10 @@ namespace Bank
 
     class DOB
     {
-        //user's date of birth collection
+        
         public int day;
         private int month;
         private int year;
-        //Bank bn = new Bank();
         public void set(int d, int m, int y)
         {
             
@@ -25,7 +24,7 @@ namespace Bank
         }
         public bool checkDate()
         {
-            if (day > 31 || month > 12 || year > 2022 || year<1920)
+            if (day > 31 || month > 12 || year > 2022 || year<1930)
             {
                 Console.WriteLine("Invalid date ");
                 return false;

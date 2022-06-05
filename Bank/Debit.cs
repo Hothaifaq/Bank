@@ -16,18 +16,12 @@ namespace Bank
 
         }
 
-        public Debit(string name, DOB DOB, string nominee, double balance) : base(name, DOB, nominee, balance)
+        public Debit(string name, DOB DOB, string User, double balance) : base(name, DOB, User, balance)
         {
 
         }
 
 
-
-        /* private bool isDailyTransLimitOver(double amount)
-         {
-
-         }*/
-       // Bank bn = new Bank();
 
         public override bool deposit(double amount)
         {
@@ -39,8 +33,7 @@ namespace Bank
             }
             else
             {
-               // int num = bn.passArrNum;
-               // bn.myBalance[num] = bn.myBalance[num] + ammount;
+               
                 this.balance = balance + ammount;
                 Console.WriteLine("You account balance has been deposited.Balance is: "+balance);
                 return true;

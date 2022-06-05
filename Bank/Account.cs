@@ -11,7 +11,7 @@ namespace Bank
         public readonly string name;
         public readonly string ID;
         public readonly DOB DOB;
-        public readonly string nominee;
+        public readonly string User;
         public double balance;
         protected string type;
         public double ammount;
@@ -34,18 +34,19 @@ namespace Bank
            
             Console.WriteLine("Name : " + name);
             Console.WriteLine("Date of Birth :" + DOB);
-            Console.WriteLine("Nominee : " + nominee);
+            Console.WriteLine("User : " +User);
             Console.WriteLine("Balance :" + balance);
         }
         public Account()
         {
 
         }
-        public Account(string name, DOB DOB, string nominee, double balance)
+        public Account(string name, DOB DOB, string User, double balance)
         {
             this.name = name;
             this.DOB = DOB;
-            this.nominee = nominee;
+            this. User = User;
+     
             this.balance = balance;
         }
     }

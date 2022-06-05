@@ -16,7 +16,7 @@ namespace Bank
         public string[] myName = new string[100];
         public string[] myAccType = new string[100];
         public string[] myDob = new string[100];
-        public string[] myNominee = new string[100];
+        public string[] myUser = new string[100];
         public double[] myBalance = new double[100];
         
         IDGENERATOR id1 = new IDGENERATOR();
@@ -28,7 +28,7 @@ namespace Bank
         public bool val = true;
         public bool debval = true;
 
-        //id storing
+       
         private void GetAcc(string ID)
         {
             ID = this.id;
@@ -48,17 +48,17 @@ namespace Bank
         
         public void showInfo()
         {
-            int indexNum;//specific index for showing information
+            int indexNum;
             string inId = Convert.ToString(Console.ReadLine());
            if (myId.Contains(inId))
             {
-                indexNum = Array.IndexOf(myId,inId);//find out array number
+                indexNum = Array.IndexOf(myId,inId);
                 Console.WriteLine("Your details: ");
                 Console.WriteLine("Name: "+myName[indexNum]);
                 Console.WriteLine("Id: " + myId[indexNum]);
                 Console.WriteLine("Acc Type: " + myAccType[indexNum]);
                 Console.WriteLine("DOB: " + myDob[indexNum]);
-                Console.WriteLine("Nominee: " + myNominee[indexNum]);
+                Console.WriteLine("Nominee: " + myUser[indexNum]);
                 Console.WriteLine("Balance: " + myBalance[indexNum]);
             }
             else
@@ -93,7 +93,7 @@ namespace Bank
                
                 name = Convert.ToString(Console.ReadLine());
                 myName[idnum] = name;
-                //if user input for date is wrong then it will take untill the input is correct
+                
                 while (val==true)
                 {
                     Console.WriteLine("Enter date: ");
@@ -109,11 +109,11 @@ namespace Bank
                     }
                     else val = true;
                 }
-                val = true;//debit,credit,savings all used the same val 
-                Console.WriteLine("Enter Nominee name: ");
+                val = true; 
+                Console.WriteLine("Enter User name: ");
                 nominee = Convert.ToString(Console.ReadLine());
-                myNominee[idnum] = nominee;
-                //takes input untill balance is correct
+                myUser[idnum] = nominee;
+                
                 while (debval == true)
                 {
                     Console.WriteLine("Enter account balance: ");
@@ -128,13 +128,13 @@ namespace Bank
                         debval = false;
                     }
                 }
-                debval = true;//debit,credit using the same value
+                debval = true;
                 Console.WriteLine("Created debit account successfully...! ");
-                //Console.Write("Your Account Id : ");
-                id =id1.generate();//collect id from id generator
-                id = id + "Deb";//add string to that generated id
+                
+                id =id1.generate();
+                id = id + "Deb";
                 Console.WriteLine("Your Account Id : "+id);
-                GetAcc(id);//store id and increase the index number
+                GetAcc(id);
 
             }
             else if (input == "2")
@@ -142,10 +142,10 @@ namespace Bank
                 accType = "Credit";
                 myAccType[idnum] = accType;
                 Console.Write("Name:");
-                // object ob2 = Console.ReadLine();
+                
                 name = Convert.ToString(Console.ReadLine());
                 myName[idnum] = name;
-                //if user input for date is wrong then it will take untill the input is correct
+           
                 while (val == true)
                 {
                     Console.WriteLine("Enter date: ");
@@ -161,11 +161,11 @@ namespace Bank
                     }
                     else val = true;
                 }
-                val = true;//debit,credit,savings all used the same val 
-                Console.WriteLine("Enter Nominee name: ");
+                val = true;
+                Console.WriteLine("Enter User name: ");
                 nominee = Convert.ToString(Console.ReadLine());
-                myNominee[idnum] = nominee;
-                //takes input untill balance is correct
+                myUser[idnum] = nominee;
+                
                 while (debval == true)
                 {
                     Console.WriteLine("Enter account balance: ");
@@ -181,12 +181,12 @@ namespace Bank
                         debval = false;
                     }
                 }
-                debval = true;//debit,credit using the same value
+                debval = true;
                 Console.WriteLine("Created Credit account successfully...! ");
-                //Console.Write("Your Account Id : ");
-                id = id1.generate();//collect id from id generator
-                id = id + "Cre";//add string to that generated id
-                // Console.Write("Deb");
+                
+                id = id1.generate();
+                id = id + "Cre";
+              
                 Console.WriteLine("Your Account Id : " + id);
                 GetAcc(id);
 
@@ -199,7 +199,7 @@ namespace Bank
           
                 name = Convert.ToString(Console.ReadLine());
                 myName[idnum] = name;
-                //if user input for date is wrong then it will take untill the input is correct
+             
                 while (val == true)
                 {
                     Console.WriteLine("Enter date: ");
@@ -215,18 +215,18 @@ namespace Bank
                     }
                     else val = true;
                 }
-                val = true;//debit,credit,savings all used the same val 
-                Console.WriteLine("Enter Nominee name: ");
+                val = true;
+                Console.WriteLine("Enter User name: ");
                 nominee = Convert.ToString(Console.ReadLine());
-                myNominee[idnum] = nominee;
+                myUser[idnum] = nominee;
                 Console.WriteLine("Enter account balance: ");
                 balance = Convert.ToDouble(Console.ReadLine());
                 myBalance[idnum] = balance;
                 Console.WriteLine("Created Savings account successfully...! ");
-                //Console.Write("Your Account Id : ");
-                id = id1.generate();//collect id from id generator
-                id = id + "Sav";//add string to that generated id
-                // Console.Write("Deb");
+                
+                id = id1.generate();
+                id = id + "Sav";
+              
                 Console.WriteLine("Your Account Id : " + id);
                 GetAcc(id);
 
@@ -245,7 +245,7 @@ namespace Bank
             if (myId.Contains(inId))
             {
                 indexNum = Array.IndexOf(myId, inId);
-                //passArrNum = indexNum;
+                
                 Console.WriteLine("Your Balance is: " + myBalance[indexNum]);
                 Console.WriteLine("How much you want to deposit: ");
                 double depval = Convert.ToDouble(Console.ReadLine());

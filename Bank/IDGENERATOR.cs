@@ -8,7 +8,7 @@ namespace Bank
 {
     class IDGENERATOR
     {
-        //taking system date to create an id for an account holder
+        
         static int id = 0;
         string storeId;
         DateTime date = DateTime.Now;

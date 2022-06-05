@@ -33,7 +33,7 @@ namespace Bank
                 object ob1 = Console.ReadLine();
                 input = Convert.ToString(ob1);
 
-                //for 1-7  funtion calling
+                
                 if (input == "1")
                 {
                     Console.WriteLine("Enter account Type :");
@@ -72,7 +72,7 @@ namespace Bank
 
             }
 
-           // Console.ReadKey();
+          
 
         }
 
